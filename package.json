@@ -2,7 +2,7 @@
     "name":  "functions",
     "scripts":  {
                     "lint":  "eslint --ext .js,.ts .",
-                    "build": "npm run build --prefix web",
+                    "build": "npm ci --omit=dev --prefix web && npm run build --prefix web",
                     "build:watch":  "tsc --watch",
                     "serve":  "npm run build \u0026\u0026 firebase emulators:start --only functions",
                     "shell":  "npm run build \u0026\u0026 firebase functions:shell",
