@@ -1,0 +1,33 @@
+type User @table {
+  email: String!
+  displayName: String!
+  createdAt: Timestamp!
+  companyName: String
+  photoUrl: String
+}
+
+type Survey @table {
+  name: String!
+  question: String!
+  createdAt: Timestamp!
+  description: String
+  isActive: Boolean
+  user: User
+}
+
+type Recipient @table {
+  email: String!
+  sentAt: Timestamp!
+  firstName: String
+  lastName: String
+  customerSegment: String
+  survey: Survey
+}
+
+type Response @table {
+  score: Int!
+  submittedAt: Timestamp!
+  comment: String
+  survey: Survey
+  recipient: Recipient
+}
